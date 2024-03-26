@@ -1,32 +1,32 @@
 public class GenerateInfoFiles {
 
-    // Método para generar un archivo plano pseudoaleatorio
+    // Method to generate a pseudo-random flat file
     public static void generateFile(String filename, int numLines) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 
-            // Generar datos pseudoaleatorios y escribirlos en el archivo
+            // Generate pseudo-random data and write it to the file
             Random random = new Random();
             for (int i = 0; i < numLines; i++) {
-                int randomValue = random.nextInt(100); // Ejemplo de valor pseudoaleatorio entre 0 y 99
+                int randomValue = random.nextInt(100); // Example of pseudo-random value between 0 and 99
                 writer.write(Integer.toString(randomValue));
                 writer.newLine();
             }
 
             writer.close();
-            System.out.println("Archivo " + filename + " generado exitosamente.");
+            System.out.println("File " + filename + " sucessfully generated.");
         } catch (IOException e) {
-            System.err.println("Error al escribir en el archivo " + filename + ": " + e.getMessage());
+            System.err.println("Error writing to file " + filename + ": " + e.getMessage());
         }
     }
 
-    // Método main para ejecutar el programa
+    // Main method to execute the program
     public static void main(String[] args) {
-        // Especifica el nombre del archivo y el número de líneas
-        String filename = "datos.txt";
-        int numLines = 100; // Por ejemplo, generará 100 números pseudoaleatorios
+        // Specify file name and number of lines
+        String filename = "data.txt";
+        int numLines = 100; // For example, will generate 100 pseudo-random numbers
 
-        // Generar el archivo
+        // Generate the fileS
         generateFile(filename, numLines);
     }
 }
